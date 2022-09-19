@@ -25,6 +25,7 @@ No tests were required for this project. That doesn't mean it's a bad idea to in
 
 Video Walkthrough
 
+![Note Taker Walkthrough ](https://user-images.githubusercontent.com/98553537/190959854-6e5910ed-9d6c-4c07-b796-1181fc8dcaa7.gif)
 
 Questions
 Have questions about this project?
