@@ -22,7 +22,7 @@ module.exports = function (app) {
             const activeNote = {
                 title: req.body.title,
                 text: req.body.text,
-                id: uuid.v5()
+                id: uuid.v4()
             };
             notes.push(activeNote);
             updateNotes(notes);
