@@ -8,7 +8,7 @@ Table of Contents
 * [Contribution](#contribution)
 * [Questions](#questions)
 
-Description
+<strong>Description</strong>
 Challenge 11 involves creating a simple note-taking application for web. Completing this challenge allowed me to demonstrate my knowledge of html, css, Javascript (including Node, Express, and UUID). 
 
 Installation
