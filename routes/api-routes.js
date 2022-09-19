@@ -8,10 +8,10 @@ let data  = require('../db/db.json');
 router.get('/', (req, res) => res.json(data));
 
 router.post('/', (req, res) => {
-    const newNoteTitle = req.body.noteTitle;
-    const newNoteText = req.body.noteText;
+    const noteTitle = req.body.noteTitle;
+    const noteText = req.body.noteText;
 
-    if(!newNoteTitle || !newNoteText) {
+    if(!noteTitle || !noteText) {
         res.status(400).json({message: "Note must have title and body please."});
 
     } else {
