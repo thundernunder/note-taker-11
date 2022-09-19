@@ -1,26 +1,49 @@
-const path  = require('path');
+// Add required dependencies
+const path = require('path');
 const fs = require('fs');
 const uuid = require('uuid');
-const router = express.Router();
 
-let data  = require('../db/db.json');
+// Require HTML routes file
+require('./html-routes');
 
-router.get('/', (req, res) => res.json(data));
+// Set up API routes export for server.js page
+module.exports = function (app) {
+    fs.readFile('db/db.json', 'utf8', function (err, data) {
+        if (err) throw err;
+        
+        let notes = JSON.parse(data);
+      
+        app.get('/api/notes', function(req, res) {
+            res.json(notes);
+        })
 
-router.post('/', (req, res) => {
-    const noteTitle = req.body.noteTitle;
-    const noteText = req.body.noteText;
+        app.post('/api/notes', function(req, res) {
+            
+            const activeNote = {
+                title: req.body.title,
+                text: req.body.text,
+                id: uuid.v5()
+            };
+            notes.push(activeNote);
+            updateNotes(notes);
+            res.json(notes);
+        })
 
-    if(!noteTitle || !noteText) {
-        res.status(400).json({message: "Note must have title and body please."});
+        app.get('/api/notes/:id', function(req, res) {
+            res.json(notes[req.params.id]);
+        })
 
-    } else {
-        const newNote = {
-            id: uuid.v4(),
-            title: newNoteTitle,
-            text: newNoteText
-        };
-    }
-});
+        app.delete('/api/notes/:id', function(req, res) {
+            notes.splice(req.params.id, 1);
+            updateNotes(notes);
+            res.json(notes);
+        })
+    })
 
-module.exports = router;
+    function updateNotes(notes) {
+        fs.writeFile('db/db.json', JSON.stringify(notes, '\t'), function(err) {
+            if (err) throw err;
+            return true;
+        })
+    };
+};
