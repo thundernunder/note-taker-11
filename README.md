@@ -1,6 +1,6 @@
 <h1>Express Note-Taker Application</h1> 
 
-<h2>Table of Contents</h2>
+<strong>Table of Contents</strong>
 * [Description](#description)
 * [Installation](#installation)
 * [Useage](#useage)
@@ -17,7 +17,7 @@
 <h2>Useage</h2>
 <p>Fist, install all node packages by entering 'npm i' into the command line. Once installations are complete, type 'npm start' into the command line. You'll know application is ready to use once you see 'Server available at localhost3001'.</p>
 
-<h2>Contributing</h2>
+<h2>Contribution</h2>
 <p>Feel free to message me if you have any ideas on how to make this better!</p>
 
 <h2>Test</h2>
