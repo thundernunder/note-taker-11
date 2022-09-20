@@ -27,6 +27,9 @@
 
 ![Note Taker Walkthrough ](https://user-images.githubusercontent.com/98553537/190959854-6e5910ed-9d6c-4c07-b796-1181fc8dcaa7.gif)
 
+<h2>Live App</h2>
+<p>Please click this link to navigate to deployed application: https://nates-note-taker.herokuapp.com/</p>
+
 <h2>Questions</h2>
 <p>Have questions about this project?
 GitHub: https://github.com/thundernunder
